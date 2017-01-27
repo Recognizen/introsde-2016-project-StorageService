@@ -104,8 +104,8 @@
     	
     	<!-- Target runs the endpoint. Publishes the service -->
         <target name="start" depends="install">
-            <echo message="app start lifecoach.storageService.soap.endpoint.StoragePublisher in ${build.dir}" />
-            <java classname="lifecoach.storageService.soap.endpoint.StoragePublisher" classpath="${build.dir}" fork="true">
+            <echo message="app start lifecoach.storageservice.soap.endpoint.StoragePublisher in ${build.dir}" />
+            <java classname="lifecoach.storageservice.soap.endpoint.StoragePublisher" classpath="${build.dir}" fork="true">
                 <arg value="$JAVA_OPTS  -cp" />
                 <classpath>
                     <path location="build" />
