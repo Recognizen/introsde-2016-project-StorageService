@@ -139,4 +139,10 @@ public interface Storage {
     public HealthMeasureHistory updatePersonHistoryMeasure(@WebParam(name="personId") long id, @WebParam(name="measureHistory") HealthMeasureHistory m);
     
     // --- End of Measure operations
+    
+    //AdapterAPI operations
+    @WebMethod(operationName="getCatUrl")
+    @WebResult(name="catpic") 
+    public String getCatUrl();
+    
 }

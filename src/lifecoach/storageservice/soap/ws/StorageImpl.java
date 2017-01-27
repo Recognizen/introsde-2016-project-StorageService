@@ -3,7 +3,15 @@ package lifecoach.storageservice.soap.ws;
 import java.util.List;
 
 import javax.jws.WebService;
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import javax.xml.ws.Holder;
+
+import org.glassfish.jersey.client.ClientConfig;
+import org.json.JSONObject;
 
 import lifecoach.localdb.soap.ws.Achievement;
 import lifecoach.localdb.soap.ws.Goal;
@@ -238,6 +246,19 @@ public class StorageImpl implements Storage {
         
         return localdb.updatePersonHistoryMeasure(id, measure);
 	}
-    
+
     // --- End of Measure operations
+
+	@Override
+	public String getCatUrl() {
+    	ClientConfig clientConfig = new ClientConfig();
+		Client client = ClientBuilder.newClient(clientConfig);
+		//https://nijikokun-random-cats.p.mashape.com/random/kitten
+		WebTarget service = client.target("http://127.0.1.1:5700/adapter");
+		Response response = service.path("/catpic")
+				.request()
+				.accept(MediaType.APPLICATION_XML).get();
+		
+		return response.readEntity(String.class);
+	}
 }
