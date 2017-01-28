@@ -11,7 +11,6 @@ import javax.ws.rs.core.Response;
 import javax.xml.ws.Holder;
 
 import org.glassfish.jersey.client.ClientConfig;
-import org.json.JSONObject;
 
 import lifecoach.localdb.soap.ws.Achievement;
 import lifecoach.localdb.soap.ws.Goal;
