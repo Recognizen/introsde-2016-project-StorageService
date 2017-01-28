@@ -141,8 +141,8 @@ public interface Storage {
     // --- End of Measure operations
     
     //AdapterAPI operations
-    @WebMethod(operationName="getCatUrl")
-    @WebResult(name="catpic") 
-    public String getCatUrl();
+    @WebMethod(operationName="getPicUrl")
+    @WebResult(name="picurl") 
+    public String getPicUrl(@WebParam(name="topic") String topic);
     
 }

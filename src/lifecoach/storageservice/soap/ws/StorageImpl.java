@@ -249,15 +249,16 @@ public class StorageImpl implements Storage {
     // --- End of Measure operations
 
 	@Override
-	public String getCatUrl() {
+	public String getPicUrl(String topic) {
     	ClientConfig clientConfig = new ClientConfig();
 		Client client = ClientBuilder.newClient(clientConfig);
 		//https://nijikokun-random-cats.p.mashape.com/random/kitten
 		WebTarget service = client.target("http://127.0.1.1:5700/adapter");
-		Response response = service.path("/catpic")
+		Response response = service.path("/pixabay/"+topic)
 				.request()
 				.accept(MediaType.APPLICATION_XML).get();
-		
-		return response.readEntity(String.class);
+		String link = response.readEntity(String.class);
+		System.out.println(link);
+		return link;
 	}
 }
