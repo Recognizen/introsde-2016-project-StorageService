@@ -23,7 +23,7 @@ public class StoragePublisher {
         }
         
         String endpointUrl = PROTOCOL+HOSTNAME+":"+PORT+BASE_URL;
-        System.out.println("Starting Lifecoach Database Service...");
+        System.out.println("Starting Storage Service...");
         System.out.println("--> Published. Check out "+endpointUrl+"?wsdl");
         Endpoint.publish(endpointUrl, new StorageImpl());
     }

@@ -52,7 +52,7 @@ public interface Storage {
     //-- Start of AchievedGoal Table operations
 	
     @WebMethod(operationName="readAchievementList")
-    @WebResult(name="achievements") 
+    @WebResult(name="achievement") 
     public List<Achievement> readAchievementList();
     
     //Specific goal

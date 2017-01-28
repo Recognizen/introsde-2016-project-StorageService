@@ -18,7 +18,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="achievements" type="{http://ws.soap.localdb.lifecoach/}achievement" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="achievement" type="{http://ws.soap.localdb.lifecoach/}achievement" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -29,25 +29,25 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "readAchievementListResponse", propOrder = {
-    "achievements"
+    "achievement"
 })
 public class ReadAchievementListResponse {
 
-    protected List<Achievement> achievements;
+    protected List<Achievement> achievement;
 
     /**
-     * Gets the value of the achievements property.
+     * Gets the value of the achievement property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the achievements property.
+     * This is why there is not a <CODE>set</CODE> method for the achievement property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getAchievements().add(newItem);
+     *    getAchievement().add(newItem);
      * </pre>
      * 
      * 
@@ -57,11 +57,11 @@ public class ReadAchievementListResponse {
      * 
      * 
      */
-    public List<Achievement> getAchievements() {
-        if (achievements == null) {
-            achievements = new ArrayList<Achievement>();
+    public List<Achievement> getAchievement() {
+        if (achievement == null) {
+            achievement = new ArrayList<Achievement>();
         }
-        return this.achievements;
+        return this.achievement;
     }
 
 }

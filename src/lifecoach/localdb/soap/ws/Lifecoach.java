@@ -60,7 +60,7 @@ public interface Lifecoach {
      *     returns java.util.List<lifecoach.localdb.soap.ws.Goal>
      */
     @WebMethod
-    @WebResult(name = "goals", targetNamespace = "")
+    @WebResult(name = "goal", targetNamespace = "")
     @RequestWrapper(localName = "readGoalList", targetNamespace = "http://ws.soap.localdb.lifecoach/", className = "lifecoach.localdb.soap.ws.ReadGoalList")
     @ResponseWrapper(localName = "readGoalListResponse", targetNamespace = "http://ws.soap.localdb.lifecoach/", className = "lifecoach.localdb.soap.ws.ReadGoalListResponse")
     @Action(input = "http://ws.soap.localdb.lifecoach/Lifecoach/readGoalListRequest", output = "http://ws.soap.localdb.lifecoach/Lifecoach/readGoalListResponse")
@@ -99,7 +99,7 @@ public interface Lifecoach {
      *     returns java.util.List<lifecoach.localdb.soap.ws.Achievement>
      */
     @WebMethod
-    @WebResult(name = "achievements", targetNamespace = "")
+    @WebResult(name = "achievement", targetNamespace = "")
     @RequestWrapper(localName = "readAchievementList", targetNamespace = "http://ws.soap.localdb.lifecoach/", className = "lifecoach.localdb.soap.ws.ReadAchievementList")
     @ResponseWrapper(localName = "readAchievementListResponse", targetNamespace = "http://ws.soap.localdb.lifecoach/", className = "lifecoach.localdb.soap.ws.ReadAchievementListResponse")
     @Action(input = "http://ws.soap.localdb.lifecoach/Lifecoach/readAchievementListRequest", output = "http://ws.soap.localdb.lifecoach/Lifecoach/readAchievementListResponse")
@@ -165,7 +165,7 @@ public interface Lifecoach {
      *     returns java.util.List<lifecoach.localdb.soap.ws.Person>
      */
     @WebMethod
-    @WebResult(name = "people", targetNamespace = "")
+    @WebResult(name = "person", targetNamespace = "")
     @RequestWrapper(localName = "readPersonList", targetNamespace = "http://ws.soap.localdb.lifecoach/", className = "lifecoach.localdb.soap.ws.ReadPersonList")
     @ResponseWrapper(localName = "readPersonListResponse", targetNamespace = "http://ws.soap.localdb.lifecoach/", className = "lifecoach.localdb.soap.ws.ReadPersonListResponse")
     @Action(input = "http://ws.soap.localdb.lifecoach/Lifecoach/readPersonListRequest", output = "http://ws.soap.localdb.lifecoach/Lifecoach/readPersonListResponse")
