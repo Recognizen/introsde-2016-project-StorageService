@@ -18,6 +18,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="Achievement" type="{http://ws.soap.localdb.lifecoach/}achievement" minOccurs="0"/>
+ *         &lt;element name="personId" type="{http://www.w3.org/2001/XMLSchema}long"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -28,12 +29,14 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "createAchievement", propOrder = {
-    "achievement"
+    "achievement",
+    "personId"
 })
 public class CreateAchievement {
 
     @XmlElement(name = "Achievement")
     protected Achievement achievement;
+    protected long personId;
 
     /**
      * Gets the value of the achievement property.
@@ -57,6 +60,22 @@ public class CreateAchievement {
      */
     public void setAchievement(Achievement value) {
         this.achievement = value;
+    }
+
+    /**
+     * Gets the value of the personId property.
+     * 
+     */
+    public long getPersonId() {
+        return personId;
+    }
+
+    /**
+     * Sets the value of the personId property.
+     * 
+     */
+    public void setPersonId(long value) {
+        this.personId = value;
     }
 
 }

@@ -71,6 +71,7 @@ public interface Lifecoach {
     /**
      * 
      * @param goal
+     * @param personId
      * @return
      *     returns lifecoach.localdb.soap.ws.Goal
      */
@@ -81,7 +82,9 @@ public interface Lifecoach {
     @Action(input = "http://ws.soap.localdb.lifecoach/Lifecoach/createGoalRequest", output = "http://ws.soap.localdb.lifecoach/Lifecoach/createGoalResponse")
     public Goal createGoal(
         @WebParam(name = "Goal", targetNamespace = "")
-        Goal goal);
+        Goal goal,
+        @WebParam(name = "personId", targetNamespace = "")
+        long personId);
 
     /**
      * 
@@ -140,6 +143,7 @@ public interface Lifecoach {
     /**
      * 
      * @param achievement
+     * @param personId
      * @return
      *     returns lifecoach.localdb.soap.ws.Achievement
      */
@@ -150,7 +154,9 @@ public interface Lifecoach {
     @Action(input = "http://ws.soap.localdb.lifecoach/Lifecoach/createAchievementRequest", output = "http://ws.soap.localdb.lifecoach/Lifecoach/createAchievementResponse")
     public Achievement createAchievement(
         @WebParam(name = "Achievement", targetNamespace = "")
-        Achievement achievement);
+        Achievement achievement,
+        @WebParam(name = "personId", targetNamespace = "")
+        long personId);
 
     /**
      * 

@@ -60,11 +60,11 @@ public class StorageImpl implements Storage {
 	}
 
 	@Override
-	public Goal createGoal(Goal g) {
+	public Goal createGoal(Goal g, long personId) {
 		LifecoachService service = new LifecoachService();
         Lifecoach localdb = service.getLifecoachImplPort();
         
-		Goal goal = localdb.createGoal(g);
+		Goal goal = localdb.createGoal(g, personId);
 
 		return goal;     
 	}
@@ -113,11 +113,11 @@ public class StorageImpl implements Storage {
 	}
 
 	@Override
-	public Achievement createAchievement(Achievement a) {
+	public Achievement createAchievement(Achievement a, long personId) {
 		LifecoachService service = new LifecoachService();
         Lifecoach localdb = service.getLifecoachImplPort();
         
-        return localdb.createAchievement(a);
+        return localdb.createAchievement(a, personId);
 	}
 
 	@Override
