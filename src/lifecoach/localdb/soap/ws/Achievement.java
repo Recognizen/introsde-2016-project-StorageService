@@ -19,9 +19,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="achievementId" type="{http://www.w3.org/2001/XMLSchema}long"/>
- *         &lt;element name="goal" type="{http://ws.soap.localdb.lifecoach/}goal" minOccurs="0"/>
+ *         &lt;element name="value" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="completed" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="person" type="{http://ws.soap.localdb.lifecoach/}person" minOccurs="0"/>
+ *         &lt;element name="measureDefinition" type="{http://ws.soap.localdb.lifecoach/}measureDefinition" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -33,17 +33,17 @@ import javax.xml.datatype.XMLGregorianCalendar;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "achievement", propOrder = {
     "achievementId",
-    "goal",
+    "value",
     "completed",
-    "person"
+    "measureDefinition"
 })
 public class Achievement {
 
     protected long achievementId;
-    protected Goal goal;
+    protected String value;
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar completed;
-    protected Person person;
+    protected MeasureDefinition measureDefinition;
 
     /**
      * Gets the value of the achievementId property.
@@ -62,27 +62,27 @@ public class Achievement {
     }
 
     /**
-     * Gets the value of the goal property.
+     * Gets the value of the value property.
      * 
      * @return
      *     possible object is
-     *     {@link Goal }
+     *     {@link String }
      *     
      */
-    public Goal getGoal() {
-        return goal;
+    public String getValue() {
+        return value;
     }
 
     /**
-     * Sets the value of the goal property.
+     * Sets the value of the value property.
      * 
      * @param value
      *     allowed object is
-     *     {@link Goal }
+     *     {@link String }
      *     
      */
-    public void setGoal(Goal value) {
-        this.goal = value;
+    public void setValue(String value) {
+        this.value = value;
     }
 
     /**
@@ -110,27 +110,27 @@ public class Achievement {
     }
 
     /**
-     * Gets the value of the person property.
+     * Gets the value of the measureDefinition property.
      * 
      * @return
      *     possible object is
-     *     {@link Person }
+     *     {@link MeasureDefinition }
      *     
      */
-    public Person getPerson() {
-        return person;
+    public MeasureDefinition getMeasureDefinition() {
+        return measureDefinition;
     }
 
     /**
-     * Sets the value of the person property.
+     * Sets the value of the measureDefinition property.
      * 
      * @param value
      *     allowed object is
-     *     {@link Person }
+     *     {@link MeasureDefinition }
      *     
      */
-    public void setPerson(Person value) {
-        this.person = value;
+    public void setMeasureDefinition(MeasureDefinition value) {
+        this.measureDefinition = value;
     }
 
 }

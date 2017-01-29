@@ -30,13 +30,13 @@ public class StorageImpl implements Storage {
     //--- Start of Goal table operations 
 	
 	@Override
-	public List<Goal> readGoalList() {
+	public List<Goal> readGoalList(long personId) {
 		
         LifecoachService service = new LifecoachService();
         Lifecoach localdb = service.getLifecoachImplPort();
 		
 		System.out.println("Retrieving Goals");
-		return localdb.readGoalList();
+		return localdb.readGoalList(personId);
 	}
 	
 	@Override
@@ -85,11 +85,11 @@ public class StorageImpl implements Storage {
 	//--- Start of AchievedGoals table operations 
 	
 	@Override
-	public List<Achievement> readAchievementList() {
+	public List<Achievement> readAchievementList(long personId) {
 		LifecoachService service = new LifecoachService();
         Lifecoach localdb = service.getLifecoachImplPort();
 		
-		return localdb.readAchievementList();
+		return localdb.readAchievementList(personId);
 	}
 	
 	@Override

@@ -21,23 +21,25 @@ import javax.xml.ws.ResponseWrapper;
  */
 @WebService(name = "Lifecoach", targetNamespace = "http://ws.soap.localdb.lifecoach/")
 @XmlSeeAlso({
-    lifecoach.localdb.soap.ws.ObjectFactory.class,
-    localdb.soap.ws.ObjectFactory.class
+    ObjectFactory.class
 })
 public interface Lifecoach {
 
 
     /**
      * 
-     * @param goal
+     * @param personId
+     * @return
+     *     returns java.util.List<lifecoach.localdb.soap.ws.Goal>
      */
     @WebMethod
-    @RequestWrapper(localName = "updateGoal", targetNamespace = "http://ws.soap.localdb.lifecoach/", className = "lifecoach.localdb.soap.ws.UpdateGoal")
-    @ResponseWrapper(localName = "updateGoalResponse", targetNamespace = "http://ws.soap.localdb.lifecoach/", className = "lifecoach.localdb.soap.ws.UpdateGoalResponse")
-    @Action(input = "http://ws.soap.localdb.lifecoach/Lifecoach/updateGoalRequest", output = "http://ws.soap.localdb.lifecoach/Lifecoach/updateGoalResponse")
-    public void updateGoal(
-        @WebParam(name = "goal", targetNamespace = "", mode = WebParam.Mode.INOUT)
-        Holder<Goal> goal);
+    @WebResult(name = "goal", targetNamespace = "")
+    @RequestWrapper(localName = "readGoalList", targetNamespace = "http://ws.soap.localdb.lifecoach/", className = "lifecoach.localdb.soap.ws.ReadGoalList")
+    @ResponseWrapper(localName = "readGoalListResponse", targetNamespace = "http://ws.soap.localdb.lifecoach/", className = "lifecoach.localdb.soap.ws.ReadGoalListResponse")
+    @Action(input = "http://ws.soap.localdb.lifecoach/Lifecoach/readGoalListRequest", output = "http://ws.soap.localdb.lifecoach/Lifecoach/readGoalListResponse")
+    public List<Goal> readGoalList(
+        @WebParam(name = "personId", targetNamespace = "")
+        long personId);
 
     /**
      * 
@@ -56,15 +58,15 @@ public interface Lifecoach {
 
     /**
      * 
-     * @return
-     *     returns java.util.List<lifecoach.localdb.soap.ws.Goal>
+     * @param goal
      */
     @WebMethod
-    @WebResult(name = "goal", targetNamespace = "")
-    @RequestWrapper(localName = "readGoalList", targetNamespace = "http://ws.soap.localdb.lifecoach/", className = "lifecoach.localdb.soap.ws.ReadGoalList")
-    @ResponseWrapper(localName = "readGoalListResponse", targetNamespace = "http://ws.soap.localdb.lifecoach/", className = "lifecoach.localdb.soap.ws.ReadGoalListResponse")
-    @Action(input = "http://ws.soap.localdb.lifecoach/Lifecoach/readGoalListRequest", output = "http://ws.soap.localdb.lifecoach/Lifecoach/readGoalListResponse")
-    public List<Goal> readGoalList();
+    @RequestWrapper(localName = "updateGoal", targetNamespace = "http://ws.soap.localdb.lifecoach/", className = "lifecoach.localdb.soap.ws.UpdateGoal")
+    @ResponseWrapper(localName = "updateGoalResponse", targetNamespace = "http://ws.soap.localdb.lifecoach/", className = "lifecoach.localdb.soap.ws.UpdateGoalResponse")
+    @Action(input = "http://ws.soap.localdb.lifecoach/Lifecoach/updateGoalRequest", output = "http://ws.soap.localdb.lifecoach/Lifecoach/updateGoalResponse")
+    public void updateGoal(
+        @WebParam(name = "goal", targetNamespace = "", mode = WebParam.Mode.INOUT)
+        Holder<Goal> goal);
 
     /**
      * 
@@ -95,6 +97,7 @@ public interface Lifecoach {
 
     /**
      * 
+     * @param personId
      * @return
      *     returns java.util.List<lifecoach.localdb.soap.ws.Achievement>
      */
@@ -103,7 +106,9 @@ public interface Lifecoach {
     @RequestWrapper(localName = "readAchievementList", targetNamespace = "http://ws.soap.localdb.lifecoach/", className = "lifecoach.localdb.soap.ws.ReadAchievementList")
     @ResponseWrapper(localName = "readAchievementListResponse", targetNamespace = "http://ws.soap.localdb.lifecoach/", className = "lifecoach.localdb.soap.ws.ReadAchievementListResponse")
     @Action(input = "http://ws.soap.localdb.lifecoach/Lifecoach/readAchievementListRequest", output = "http://ws.soap.localdb.lifecoach/Lifecoach/readAchievementListResponse")
-    public List<Achievement> readAchievementList();
+    public List<Achievement> readAchievementList(
+        @WebParam(name = "personId", targetNamespace = "")
+        long personId);
 
     /**
      * 
@@ -288,8 +293,8 @@ public interface Lifecoach {
     public Person savePersonMeasure(
         @WebParam(name = "personId", targetNamespace = "")
         long personId,
-        @WebParam(name = "measure", targetNamespace = "http://ws.soap.localdb.lifecoach/")
-        Object measure);
+        @WebParam(name = "measure", targetNamespace = "")
+        Measure measure);
 
     /**
      * 

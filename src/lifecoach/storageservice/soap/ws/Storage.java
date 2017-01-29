@@ -25,7 +25,7 @@ public interface Storage {
 	
     @WebMethod(operationName="readGoalList")
     @WebResult(name="goals") 
-    public List<Goal> readGoalList();
+    public List<Goal> readGoalList(@WebParam(name="personId") long id);
     
     //Specific goal
     @WebMethod(operationName="readGoal")
@@ -53,7 +53,7 @@ public interface Storage {
 	
     @WebMethod(operationName="readAchievementList")
     @WebResult(name="achievement") 
-    public List<Achievement> readAchievementList();
+    public List<Achievement> readAchievementList(@WebParam(name="personId") long id);
     
     //Specific goal
     @WebMethod(operationName="readAchievement")
