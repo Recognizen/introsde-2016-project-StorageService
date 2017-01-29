@@ -27,6 +27,7 @@ import lifecoach.localdb.soap.ws.Person;
 	serviceName="StorageService")
 public class StorageImpl implements Storage {	
     
+	private final String externalUrl = "https://virtual-lifecoach-external.herokuapp.com/adapter";
     //--- Start of Goal table operations 
 	
 	@Override
@@ -253,7 +254,7 @@ public class StorageImpl implements Storage {
     	ClientConfig clientConfig = new ClientConfig();
 		Client client = ClientBuilder.newClient(clientConfig);
 		//https://nijikokun-random-cats.p.mashape.com/random/kitten
-		WebTarget service = client.target("http://127.0.1.1:5700/adapter");
+		WebTarget service = client.target(externalUrl);
 		Response response = service.path("/pixabay/"+topic)
 				.request()
 				.accept(MediaType.APPLICATION_XML).get();
